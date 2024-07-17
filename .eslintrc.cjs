@@ -5,6 +5,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -14,5 +15,19 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // 'react/self-closing-comp': [
+    //   'error',
+    //   {
+    //     component: true,
+    //     html: true,
+    //   },
+    // ],
+    // 'react/jsx-curly-brace-presence': [
+    //   'error',
+    //   {
+    //     props: 'never',
+    //     children: 'never',
+    //   },
+    // ],
   },
 }
