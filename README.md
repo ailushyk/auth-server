@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+# Keycloak server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Keycloak server that can be used for testing purposes.
 
-Currently, two official plugins are available:
+## Start in development mode
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`command: start-dev`
 
-## Expanding the ESLint configuration
+## Start in production mode
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`command: start --optimized`
 
-- Configure the top-level `parserOptions` property like this:
+import realm from file during [startup](https://www.keycloak.org/server/importExport#_importing_a_realm_during_startup)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+`command: start --optimized --import-realm`
+
+## Theme
+
+### Dev mode
+
+Testing in [Docker container](https://docs.keycloakify.dev/testing-your-theme/in-a-keycloak-docker-container)
+
+```bash
+pnpm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Build production theme
+
+```bash
+pnpm run build-keycloak-theme
+```

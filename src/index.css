@@ -62,7 +62,7 @@
         @apply flex flex-col items-center;
     }
     .kcInfoAreaWrapperClass {
-        @apply !bg-card rounded-b-lg;
+        @apply !bg-card rounded-b-lg mb-3;
     }
 
     /* Form */
