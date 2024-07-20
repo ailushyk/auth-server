@@ -299,7 +299,7 @@
           "attributes": {}
         }
       ],
-      "web-client": [],
+      "web": [],
       "security-admin-console": [],
       "admin-cli": [],
       "account-console": [],
@@ -766,8 +766,8 @@
       ]
     },
     {
-      "id": "ab0ae449-9d8e-40f1-85b0-a97859d0e739",
-      "clientId": "web-client",
+      "id": "39f21cb2-27f1-4278-a710-7d5e2e4091bb",
+      "clientId": "web",
       "name": "",
       "description": "",
       "rootUrl": "",
@@ -777,10 +777,13 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
+      "secret": "**********",
       "redirectUris": [
+        "http://localhost:3000/api/auth/callback/keycloak",
         "https://www.keycloak.org/app/*"
       ],
       "webOrigins": [
+        "http://localhost:3000",
         "https://www.keycloak.org"
       ],
       "notBefore": 0,
@@ -788,15 +791,16 @@
       "consentRequired": false,
       "standardFlowEnabled": true,
       "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": true,
+      "directAccessGrantsEnabled": false,
       "serviceAccountsEnabled": false,
-      "publicClient": true,
+      "publicClient": false,
       "frontchannelLogout": true,
       "protocol": "openid-connect",
       "attributes": {
         "oidc.ciba.grant.enabled": "false",
+        "client.secret.creation.time": "1721489325",
         "backchannel.logout.session.required": "true",
-        "post.logout.redirect.uris": "https://www.keycloak.org",
+        "post.logout.redirect.uris": "https://www.keycloak.org##http://localhost:3000",
         "display.on.consent.screen": "false",
         "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false"
@@ -1492,14 +1496,14 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "oidc-address-mapper",
             "oidc-sha256-pairwise-sub-mapper",
-            "saml-user-attribute-mapper",
-            "oidc-usermodel-attribute-mapper",
             "saml-role-list-mapper",
             "saml-user-property-mapper",
+            "oidc-usermodel-property-mapper",
+            "saml-user-attribute-mapper",
+            "oidc-address-mapper",
             "oidc-full-name-mapper",
-            "oidc-usermodel-property-mapper"
+            "oidc-usermodel-attribute-mapper"
           ]
         }
       },
@@ -1519,14 +1523,14 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "oidc-usermodel-attribute-mapper",
             "saml-role-list-mapper",
-            "saml-user-property-mapper",
+            "oidc-usermodel-attribute-mapper",
             "oidc-address-mapper",
             "oidc-usermodel-property-mapper",
             "oidc-sha256-pairwise-sub-mapper",
+            "oidc-full-name-mapper",
             "saml-user-attribute-mapper",
-            "oidc-full-name-mapper"
+            "saml-user-property-mapper"
           ]
         }
       },
