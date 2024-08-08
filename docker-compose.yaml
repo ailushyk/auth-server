@@ -32,7 +32,7 @@ services:
       KC_DB_URL: "jdbc:postgresql://kc_db:5432/${POSTGRES_DB}"
       KC_DB_USERNAME: ${POSTGRES_USER}
       KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
-    command: start-dev --import-realm
+    command: start-dev --import-realm --log-level=DEBUG
     profiles: [dev]
 
   kc_db:
