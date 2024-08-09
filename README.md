@@ -7,16 +7,31 @@ This is a simple Keycloak server that can be used for testing purposes.
 Start in development mode
 
 ```bash
-docker compose --profile dev up -d
+docker compose --profile dev up -d --build
 ```
 
 Start in production mode
 
 ```bash
-docker compose --profile prod up -d
+docker compose --profile prod up -d --build
 ```
 
-After starting the server first time, you should set secret for the realm in admin console. Then you can use the realm in your application.
+### Setting Up the Realm Secret
+
+After starting the server for the first time, you'll need to configure a secret for the realm in the Admin Console. Follow these steps to set up the secret and use the realm in your application:
+
+1. Open the Keycloak Admin Console in your browser: http://localhost:8080.
+2. Log in using the admin credentials. 
+3. In the left-hand menu, navigate to the Clients section. 
+4. Select the web client (or your specific client). 
+5. Go to the Credentials tab. 
+6. In the Client Secret field, enter and save the secret. 
+7. Copy the secret from the Client Secret field. 
+8. Use this secret in your application's .env file by setting it as the AUTH_KEYCLOAK_SECRET variable:
+
+```
+AUTH_KEYCLOAK_SECRET=your_copied_secret_here
+```
 
 ### GitHub Identity Provider
 
