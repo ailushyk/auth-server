@@ -2,6 +2,8 @@
 
 This is a simple Keycloak server that can be used for testing purposes.
 
+Keycloak version: 25.0.2
+
 ## Auth server
 
 Start in development mode
